@@ -1,36 +1,23 @@
-import {
-  SignInButton,
-  SignUpButton,
-  UserButton,
-  useUser,
-} from "@clerk/clerk-react";
+import { UserButton, useUser } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const { isSignedIn } = useUser();
 
   return (
-    <div style={{ padding: "5px" }}>
+    <div className="flex gap-3 items-center justify-center ">
       {!isSignedIn ? (
         <>
-          <SignInButton>
+          <Link to="/sign-in">
             <button className="btn secondary">Login</button>
-          </SignInButton>
+          </Link>
 
-          <SignUpButton>
+          <Link to="/sign-up">
             <button className="btn primary">Sign Up</button>
-          </SignUpButton>
+          </Link>
         </>
       ) : (
-        <UserButton
-  afterSignOutUrl="/"
-  appearance={{
-    elements: {
-      avatarBox: "w-12 h-12",   // size of the avatar
-      userButtonTrigger: "p-2", // clickable area
-    },
-  }}
-/>
-
+        <UserButton afterSignOutUrl="/" />
       )}
     </div>
   );
