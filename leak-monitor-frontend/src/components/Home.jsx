@@ -3,6 +3,8 @@ import FeatureCard from "./FeatureCard";
 import {motion} from "motion/react";
 import ScrambleText from "./ScrambleText";
 import secureData from "../assets/homepageimage.webp";
+import { Github, Instagram} from 'lucide-react';
+
 
 
 
@@ -11,9 +13,23 @@ export default function Home() {
     <div className="overflow-x-hidden bg-gradient-to-b from-black via-slate-900 to-black text-white">
       <Navbar />
       
-      
+      <div className="relative top-40 z-0 flex flex-col items-center gap-3 px-4">
+  <p className="text-sm md:text-base font-semibold tracking-wide uppercase bg-white/10 backdrop-blur-md
+  border border-white/20
+    px-4 py-2 rounded-full shadow-md">
+      Launching Soon
+  </p>
+
+  <p className="text-base md:text-lg font-medium text-white
+  bg-white/10 backdrop-blur-md
+  border border-white/20
+    px-6 py-2 rounded-full shadow-md text-center">
+    Join the waitlist — register now
+  </p>
+</div>
+
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center md:left-10 px-6 pt-40">
+      <section className="relative min-h-screen flex items-center justify-center md:left-10 px-6 pt-24">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-16">
           
           {/* LEFT: TEXT */}
@@ -160,6 +176,62 @@ export default function Home() {
     }
   />
 </section>
+
+<motion.hr
+          drag="y"
+          dragConstraints={{ top: -20, bottom: 20 }}
+          dragElastic={0.15}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
+          }}
+          className="
+            w-2/3
+            relative
+            md:left-1/6
+            border-white/30
+            cursor-grab
+            active:cursor-grabbing
+            top-1/4
+            h-2
+            my-8
+          "
+        />
+
+<section className="mt-6 px-6 pb-16 ">
+  <div className="max-w-4xl mx-auto text-center space-y-6">
+    <h2 className="text-2xl md:text-3xl font-semibold text-white"> Connect Now </h2>
+    
+    {/* Social links */}
+    <div className="flex justify-center gap-6  text-gray-400 text-sm md:text-base">
+      <a
+        href="https://github.com/sahiladit/secdork"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-white transition-colors w-1/6  justify-end flex gap-1 items-center"
+      >
+        <Github /> GitHub
+      </a>
+
+      <a
+        href="https://instagram.com/secdorkofficial"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-white transition-colors w-1/6 flex gap-1 items-center "
+      >
+        <Instagram />Instagram
+      </a>
+    </div>
+
+    {/* Copyright */}
+    <p className="text-xs md:text-sm text-gray-500">
+      © {new Date().getFullYear()} Secdork. All rights reserved.
+    </p>
+
+  </div>
+</section>
+
 
 
     </div>

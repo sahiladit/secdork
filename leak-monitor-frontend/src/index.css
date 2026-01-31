@@ -4,6 +4,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+*::selection{
+    background-color:#088395;
+}
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;

@@ -1,16 +1,28 @@
-# React + Vite
+# Secdork – Leak Monitor Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Secdork is a privacy-first security monitoring platform that helps users understand whether their data may be at risk due to publicly reported data breaches.
 
-Currently, two official plugins are available:
+This repository contains the **frontend application** built with React and deployed on Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 What This App Does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Secure user authentication using **Clerk**
+- Displays a user dashboard with the monitored email address
+- Associates reported data breaches (from public blogs and disclosures) with the user’s email domain
+- Presents risk information clearly and responsibly (no false claims of confirmed leaks)
 
-## Expanding the ESLint configuration
+> ⚠️ This application does **not** store plaintext emails or passwords and does **not** scrape private or paid data sources.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 How It Works (High Level)
+
+1. User signs up / logs in via Clerk  
+2. The dashboard retrieves the authenticated user’s email  
+3. The email is used to check **publicly reported breach information** via a backend API  
+4. Results are displayed as **risk associations**, not confirmed exposures  
+
+---
+
