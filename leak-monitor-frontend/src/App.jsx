@@ -1,7 +1,6 @@
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import { SignIn, SignUp } from "@clerk/clerk-react";
-import { Analytics } from "@vercel/analytics/next";
 
 function AuthLayout({ children }) {
   return (
