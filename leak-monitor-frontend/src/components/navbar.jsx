@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Signup from "./Signup";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/clerk-react';
 
 export default function Navbar() {
   return (
@@ -12,11 +13,18 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-right">
-        <Signup></Signup>
+        {/* <Signup></Signup> */}
         {/* <Link to="/dashboard" className="text-white">
           Dashboard
         </Link> */}
-
+        <SignedOut>
+          <SignInButton />
+          <SignUpButton />
+        </SignedOut>
+        {/* Show the user button when the user is signed in */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </nav>
   );
